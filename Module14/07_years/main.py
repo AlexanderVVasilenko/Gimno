@@ -1,20 +1,25 @@
-def print_years_with_3_same_digits(low_year, up_year):
+def print_years_with_3_same_digits(low_year: int, up_year: int):
     for year in range(low_year, up_year + 1):
-        counter_1 = 1
-        counter_2 = 1
-        first_digit = year % 10
-        second_digit = (year // 10) % 10
-        if first_digit == second_digit:
-            counter_1 += 1
-        year_ = year // 100
-        for _ in range(2):
-            if year_ % 10 == first_digit:
-                counter_1 += 1
-            elif year_ % 10 == second_digit:
-                counter_2 += 1
-            year_ //= 10
-        if counter_1 >= 3 or counter_2 >= 3:
+        if is_year_have_3_same_digits(year):
             print(year)
+
+
+def is_year_have_3_same_digits(year: int):
+    last_digit_counter = 1
+    prelast_digit_counter = 1
+    first_digit = year % 10
+    second_digit = (year // 10) % 10
+    if first_digit == second_digit:
+        last_digit_counter += 1
+    year_ = year // 100
+    for _ in range(2):
+        if year_ % 10 == first_digit:
+            last_digit_counter += 1
+        elif year_ % 10 == second_digit:
+            prelast_digit_counter += 1
+        year_ //= 10
+    if last_digit_counter >= 3 or prelast_digit_counter >= 3:
+        return True
 
 
 first_year = int(input("Enter the first year: "))
