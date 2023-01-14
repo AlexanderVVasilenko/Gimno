@@ -21,10 +21,10 @@ def full_reverse(number):
     return int_part + float_part
 
 
-a = float(input("Enter the first number: "))
-a = full_reverse(a)
-b = float(input("Enter the second number: "))
-b = full_reverse(b)
-print("\nThe reversed first number:", a)
-print("The reversed second number:", b)
-print("Sum:", a + b)
+first_num = float(input("Enter the first number: "))
+first_num = full_reverse(first_num)
+second_num = float(input("Enter the second number: "))
+second_num = full_reverse(second_num)
+print("\nThe reversed first number:", first_num)
+print("The reversed second number:", second_num)
+print("Sum:", first_num + second_num)
